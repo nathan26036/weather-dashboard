@@ -54,12 +54,18 @@ p {
   width: 100%;
 }
 
+.icons {
+  max-width: 60px;
+}
+
 #todayEl {
   height: fit-content;
 }
 
 .todayWeather {
   padding: 2%;
+  font-size: 110%;
+  line-height: 2;
 }
 
 .title{
@@ -79,6 +85,8 @@ p {
   padding: 2%;
   background-color: var(--light-dark);
   color: var(--primary);
+  font-size: 110%;
+  line-height: 2;
 }
 
 li{
