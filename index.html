@@ -19,19 +19,17 @@
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"
 ></script>
-  <title>Git it Done</title>
+  <title>Weather Dashboard</title>
 </head>
 
-<body class="flex-column min-100-vh">
+<body>
   <header class="hero">
     <h1 class="app-title">
        Weather Dashboard
     </h1>
   </header>
-
-
-  <main class="flex-row justify-space-between">
-    <aside class="col-12 col-md-4">
+  <main>
+    <aside class="col-12 col-md-4 flex justify-left" style="max-width: 400px;">
 
       <section class="card">
         <h3 class="card-header text-uppercase">Search for a City</h3>
@@ -50,16 +48,11 @@
       </section>
     </aside>
 
-    <section class="mb-3">
-      <div id="todayWeather" class="list-group"></div>
-    </section>
+  <section id="weather">
+    <section id="todayEl"></section>
 
-    <section class="card bg-light mb-3 " style="max-width: 400px;">
-      <h2 class="card-header cardTodayCityName"></h2>
-      <h3 class="card-header cardTodayDate"></h3>
-      <img class="icons"/>
-      <div class="card-body cardBodyToday">
-    </section>
+    <section id="fiveWeather"></section>
+  </section>  
   </main>
 
   <script
