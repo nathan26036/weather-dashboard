@@ -6,7 +6,7 @@ var submitBtn = $('#submitBtn')
 var contHistEl = $('.history-container');
 var fiveWeather = $('#fiveWeather')
 
-
+//Gives the search button the ability to display the weather and saves to local storage
 submitBtn.on("click", function (event) {
 	event.preventDefault();
 	city = $(this).siblings('#city').val();
@@ -22,11 +22,13 @@ submitBtn.on("click", function (event) {
 });
 getHistory();
 
+//pulls the local storage down and creates buttons for the search history 
 function getHistory() {
   var getcity = JSON.parse(localStorage.getItem('city'));
+//clears the content so it doesnt create a billion buttons  
   $(contHistEl).empty();
 
-
+//loops local storage array and creates the buttons 
 	for (let i = 0; i < getcity.length; i++) {
 
 		var rowEl = document.createElement('div');
@@ -38,20 +40,20 @@ function getHistory() {
 	} if (!city) {
 		return;
 	}
-
+//makes the history buttons function
 	$('.histBtn').on("click", function (event) {
 		city = $(this).text();
     getWeather();
 	});
 };
 
-
+//Uses the weather api to get the current weather
 var getWeather = function() {
+
     var locationUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&appid='  + key;
     
     $(todayEl).empty();
-
-
+//Gathers the lat and lon from the city name using the geo api to be used on the weather
     fetch(locationUrl)
     .then(function (response) {
       return response.json();
@@ -63,8 +65,8 @@ var getWeather = function() {
         fetch(todayUrl)
         .then(function (response) {
           return response.json();
-        })
-        .then(function (data) {    //'https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png'
+        }) //Creates elements and the content that is needed for the todays weather card
+        .then(function (data) {    
             var todayEl = document.createElement('div'); 
             todayEl.classList = 'card bg-primary mb-3 todayWeather';
             var cityName = document.createElement('h1');
@@ -89,7 +91,7 @@ var getWeather = function() {
     });
 }
 
-
+//Gathers a 5 day forcast 
 function getFiveDayForecast() {
  var locationUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&appid='  + key;
     
@@ -115,7 +117,7 @@ function getFiveDayForecast() {
       title.textContent = ('5-Day Forcast: ')
       title.classList = 'title'
       fiveWeather.append(title)
-
+//loops the 5 day array above and creates a card for each day and puts them on the page
       for (let i = 0; i < fiveDays.length; i++) {
         var weatherEl = document.createElement('div'); 
         weatherEl.classList = 'card bg-primary mb-3 five';
@@ -137,7 +139,6 @@ function getFiveDayForecast() {
             weatherEl.append(wind);
             weatherEl.append(humidity);
       }
-      console.log(data)
      });
  });
 };
