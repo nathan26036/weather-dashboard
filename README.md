@@ -10,4 +10,4 @@ The goal is to create a weather dashboard where you search for a city and it wil
 ![Weather dashboard displaying weather for deland florida](https://github.com/nathan26036/weather-dashboard/blob/main/assets/images/weather-dash.PNG)
   
 ## Installation 
-The final code deployed can be found at 
+The final code deployed can be found at https://nathan26036.github.io/weather-dashboard/
