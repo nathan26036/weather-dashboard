@@ -7,7 +7,7 @@ The goal is to create a weather dashboard where you search for a city and it wil
 ### What i did
 * 
 
-![A 9-5 Schedule that is blue green and gray and has text that says meeting in the 3pm slot]()
+![]()
   
 ## Installation 
 The final code deployed can be found at 
