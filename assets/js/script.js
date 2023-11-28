@@ -111,8 +111,8 @@ function getFiveDayForecast() {
        return response.json();
      })
      .then(function (data) {
-      var fiveDays = [data.list[7], data.list[15], data.list[23], data.list[31], data.list[39]];
-
+      var fiveDays = [data.list[5], data.list[13], data.list[21], data.list[29], data.list[37]];
+console.log(data)
       var title = document.createElement('h1')
       title.textContent = ('5-Day Forcast: ')
       title.classList = 'title'
