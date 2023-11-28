@@ -5,7 +5,7 @@ The goal is to create a weather dashboard where you search for a city and it wil
 ## The process
 
 ### What i did
-* Used css an bootstrap to create a clean format
+* Used css and bootstrap to create a clean format
 * Used the geo api to take the city and convert it to lat and lon
 * Used the lat and lon to gather the weather infromation for the 5 day forcast and the current forcast
 * Created elements using java to appear on the page that hold the weather information
