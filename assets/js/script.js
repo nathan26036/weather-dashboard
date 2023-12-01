@@ -11,6 +11,9 @@ var fiveWeather = $('#fiveWeather')
 //pulls the local storage down and creates buttons for the search history 
 function getHistory() {
   var getcity = JSON.parse(localStorage.getItem('city'));
+  if (!getcity) {
+    return;
+  }
 //clears the content so it doesnt create a billion buttons  
   $(contHistEl).empty();
 
