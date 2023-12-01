@@ -6,21 +6,7 @@ var submitBtn = $('#submitBtn')
 var contHistEl = $('.history-container');
 var fiveWeather = $('#fiveWeather')
 
-//Gives the search button the ability to display the weather and saves to local storage
-submitBtn.on("click", function (event) {
-	event.preventDefault();
-	city = $(this).siblings('#city').val();
-	if (city === '') {
-		return;
-	};
-	cityHist.push(city);
 
-	localStorage.setItem('city', JSON.stringify(cityHist)); 
-  
-  getHistory();
-  getWeather();
-});
-getHistory();
 
 //pulls the local storage down and creates buttons for the search history 
 function getHistory() {
@@ -142,3 +128,19 @@ console.log(data)
      });
  });
 };
+
+//Gives the search button the ability to display the weather and saves to local storage
+submitBtn.on("click", function (event) {
+	event.preventDefault();
+	city = $(this).siblings('#city').val();
+	if (city === '') {
+		return;
+	};
+	cityHist.push(city);
+
+	localStorage.setItem('city', JSON.stringify(cityHist)); 
+
+  getHistory();
+  getWeather();
+});
+getHistory();
